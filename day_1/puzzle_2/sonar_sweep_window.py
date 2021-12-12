@@ -19,7 +19,20 @@ def sonar_sweep_window(inputs: list[int]) -> int:
 
     return count
 
+# Use the fact that the delta between the windows can be computed using the
+# difference between the first and last values
+def sonar_sweep_window_v2(inputs: list[int]) -> int:
+    if len(inputs) < 4:
+        return 0
+
+    count = 0
+    for idx in range(3, len(inputs)):
+        if inputs[idx] > inputs[idx - 3]:
+            count += 1
+
+    return count
+
 
 if __name__ == "__main__":
-    result = sonar_sweep_window(file_reader.read("../input.txt"))
+    result = sonar_sweep_window_v2(file_reader.read("../input.txt"))
     print(result)
