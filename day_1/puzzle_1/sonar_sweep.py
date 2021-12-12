@@ -3,7 +3,7 @@ import sys
 from util import file_reader
 
 
-def sonar_sweep(measurements: list[int]):
+def sonar_sweep(measurements: list[int]) -> int:
     prev = sys.maxsize
     count = 0
 
@@ -16,5 +16,5 @@ def sonar_sweep(measurements: list[int]):
 
 
 if __name__ == "__main__":
-    result = sonar_sweep(file_reader.read("input.txt"))
+    result = sonar_sweep(file_reader.read("../input.txt"))
     print(result)
