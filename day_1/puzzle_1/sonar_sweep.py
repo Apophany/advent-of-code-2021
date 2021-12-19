@@ -16,5 +16,5 @@ def sonar_sweep(measurements: list[int]) -> int:
 
 
 if __name__ == "__main__":
-    result = sonar_sweep(file_reader.read("../input.txt"))
+    result = sonar_sweep(file_reader.read_int_file("../input.txt"))
     print(result)

@@ -34,5 +34,5 @@ def sonar_sweep_window_v2(inputs: list[int]) -> int:
 
 
 if __name__ == "__main__":
-    result = sonar_sweep_window_v2(file_reader.read("../input.txt"))
+    result = sonar_sweep_window_v2(file_reader.read_int_file("../input.txt"))
     print(result)
