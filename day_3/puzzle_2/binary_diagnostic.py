@@ -19,13 +19,13 @@ def diagnose(inputs: List[str]) -> int:
                 bit_counts[idx] -= 1
 
     for bit_idx, bit in enumerate(bit_counts):
+        check_bit = "1" if bit > 0 else "0"
         for oxygen_idx, oxygen in enumerate(inputs):
-            check_bit = "1" if bit > 0 else "0"
             if not oxygen[bit_idx] == check_bit and len(oxygen_vals) > 1 and oxygen_vals.__contains__(oxygen):
                 oxygen_vals.remove(oxygen)
 
+        check_bit = "0" if bit > 0 else "1"
         for co2_idx, co2 in enumerate(inputs):
-            check_bit = "0" if bit > 0 else "1"
             if not co2[bit_idx] == check_bit and len(co2_vals) > 1 and co2_vals.__contains__(co2):
                 co2_vals.remove(co2)
 
